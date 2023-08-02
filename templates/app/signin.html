@@ -1,0 +1,41 @@
+{% extends 'app/base.html' %}
+{% load my_tags %}
+{% block title %}
+Sign In
+{% endblock title %}
+
+
+{% block body %}
+<div>
+    <div class="mt-4 h3 mb-4 text-center">Let's get in with Sign In</div>
+    <br>
+    <div class="mt-4 w-75 mx-auto">
+        <form action="" method="post">
+                {% csrf_token %}
+                <div class="danger">{{form.on_field_errors}}</div>
+                <div class="mt-3 mb-1">
+                    <label for="id_username" class="mb-2" >Email</label>
+                    {{form.username|addplaceholder:"Enter your email"|addclass:"form-control"}}
+                </div>
+                <div class="mb-2 text-danger">
+                    {{form.username.errors}}
+                </div>
+                <div class="mt-3 mb-1">
+                    <label for="id_password" class="mb-2" >Password</label>
+                    {{form.password|addplaceholder:"Enter your password"|addclass:"form-control"}}
+                </div>
+                <div class="mb-2 text-danger">
+                    {{form.passwrod.errors}}
+                </div>
+            <div class="d-grid mt-4">
+                <button class="btn btn-primary d-block" type='submit'>Sign Up</button>
+            </div>
+        </form>
+        <div class="d-flex justify-content-between mt-3">
+            <a href="{% url 'signup' %}">Don't have a account let's Sign Up</a>
+            <a href="{% url 'reset_password' %}">Forgot Password</a>
+        </div>
+    </div>
+</div>
+    
+{% endblock body %}

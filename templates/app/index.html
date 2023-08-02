@@ -1,0 +1,36 @@
+{% extends 'app/base.html' %} {% block title %} Home {% endblock title %} 
+{%block body %}
+<div class="container">
+  <div class="mt-4">
+    <h1 class="mb-4">Links</h1>
+    <div class="mb-4 h4">
+      <span class="fw-bold">Sign In - </span>
+      <span><a href="{% url 'signin' %}">{% url 'signin' %}</a></span>
+    </div>
+    <div class="mb-4 h4">
+      <span class="fw-bold">Sign Up - </span>
+      <span><a href="{% url 'signup' %}">{% url 'signup' %}</a></span>
+    </div>
+    <div class="mb-4 h4">
+      <span class="fw-bold">Sign Out - </span>
+      <span><a href="{% url 'signout' %}">{% url 'signout' %}</a></span>
+    </div>
+    <div class="mb-4 h4">
+      <span class="fw-bold">Change Password - </span>
+      <span
+        ><a href="{% url 'change_password' %}"
+          >{% url 'change_password' %}</a
+        ></span
+      >
+    </div>
+    <div class="mb-4 h4">
+      <span class="fw-bold">Forgot Password - </span>
+      <span
+        ><a href="{% url 'reset_password' %}"
+          >{% url 'reset_password' %}</a
+        ></span
+      >
+    </div>
+  </div>
+</div>
+{% endblock body %}
